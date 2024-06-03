@@ -20,6 +20,6 @@ jobs:
       - name: Install web dependencies
         run: |
           npm ci --force
-      - name: Lint
+      - name: Build
         run: |
           npm run build
