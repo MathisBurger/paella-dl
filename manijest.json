@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Paella UI downloader",
+  "description": "Simple plugin to download opencast paella videos",
+  "version": "1.0",
+  "action": {
+    "default_popup": "default.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": [
+        "https://www.linkedin.com/in/*",
+        "https://de.linkedin.com/in/*"
+      ]
+    }
+  ]
+}
