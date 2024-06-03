@@ -1,0 +1,25 @@
+name: Pull Request or push
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v4
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 20
+      - name: Install web dependencies
+        run: |
+          npm ci --force
+      - name: Lint
+        run: |
+          npm run build
